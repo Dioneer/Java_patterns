@@ -1,0 +1,30 @@
+package Pegas.adapter;
+
+import java.time.LocalDateTime;
+
+public class AdapterST500 implements MeteoSenser{
+    private SensorTemperature sensor;
+    public AdapterST500(SensorTemperature sensor) {
+        this.sensor = sensor;
+    }
+    @Override
+    public int getId() {
+        return sensor.getIdentifier();
+    }
+    @Override
+    public double getTemperature() {
+        return sensor.getIdentifier();
+    }
+    @Override
+    public double getHumidity() {
+        return 0;
+    }
+    @Override
+    public double getPressure() {
+        return 0;
+    }
+    @Override
+    public LocalDateTime getDateTime() {
+        return LocalDateTime.now();
+    }
+}

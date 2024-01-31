@@ -1,5 +1,6 @@
 package Pegas;
 
+import Pegas.adapter.*;
 import Pegas.builder.Builder;
 import Pegas.builder.Director;
 import Pegas.builder.ProgrammerBuilder;
@@ -52,8 +53,12 @@ public class Main {
 //        };
 //        System.out.println(employee1);
         /**
-         *
+         * adapter
          */
+        MeteoStore meteoStore = new MeteoStore();
+        meteoStore.save(new MS200(13));
+        ST500 st500 = new ST500(456);
+        meteoStore.save(new AdapterST500(st500));
     }
     static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
         String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
