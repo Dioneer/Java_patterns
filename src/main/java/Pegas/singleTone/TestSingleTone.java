@@ -1,4 +1,4 @@
-package Pegas;
+package Pegas.singleTone;
 
 public class TestSingleTone {
     private static volatile TestSingleTone instance;
