@@ -6,6 +6,8 @@ import Pegas.builder.Director;
 import Pegas.builder.ProgrammerBuilder;
 import Pegas.builder2.Order;
 import Pegas.builder2.OrderBuilder;
+import Pegas.composite.BoxContainer;
+import Pegas.composite.Purchase;
 import Pegas.factory.Employee;
 import Pegas.factory.EmpolyeeType;
 import Pegas.factory.Freelancer;
@@ -17,6 +19,7 @@ import Pegas.prototype.Flower;
 import Pegas.singleTone.SingleTone;
 import Pegas.singleTone.TestSingleTone;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -88,8 +91,14 @@ public class Main {
         /**
          * factoryMethod
          */
-        Present gift = new Gift().createGist(25);
-        System.out.println(gift);
+//        Present gift = new Gift().createGist(25);
+//        System.out.println(gift);
+        /**
+         * composite
+         */
+        BoxContainer boxContainer = new BoxContainer(Arrays.asList(new Purchase(25),new Purchase(44),
+        new Purchase(56),new Purchase(50)));
+        System.out.println(boxContainer.countPrice());
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
