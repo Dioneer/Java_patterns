@@ -10,6 +10,8 @@ import Pegas.factory.Employee;
 import Pegas.factory.EmpolyeeType;
 import Pegas.factory.Freelancer;
 //import Pegas.factory.Worker;
+import Pegas.factoryMethod.Gift;
+import Pegas.factoryMethod.Present;
 import Pegas.observer.*;
 import Pegas.prototype.Flower;
 import Pegas.singleTone.SingleTone;
@@ -80,9 +82,14 @@ public class Main {
         /**
          * prototype
          */
-        Flower flower = new Flower("Red", "Rose");
-        Flower flower1 = flower.clone();
-        System.out.println(flower1);
+//        Flower flower = new Flower("Red", "Rose");
+//        Flower flower1 = flower.clone();
+//        System.out.println(flower1);
+        /**
+         * factoryMethod
+         */
+        Present gift = new Gift().createGist(25);
+        System.out.println(gift);
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
