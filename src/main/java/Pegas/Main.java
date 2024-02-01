@@ -20,9 +20,13 @@ import Pegas.factoryMethod.Gift;
 import Pegas.factoryMethod.Present;
 import Pegas.observer.*;
 import Pegas.prototype.Flower;
+import Pegas.proxy.DailyReport;
+import Pegas.proxy.Proxy;
+import Pegas.proxy.Report;
 import Pegas.singleTone.SingleTone;
 import Pegas.singleTone.TestSingleTone;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -106,10 +110,14 @@ public class Main {
         /**
          * decorator
          */
-        EmailNotification notification = new EmailNotification();
-        SMSNotification smsNotification = new SMSNotification(notification);
-        MessageNotification messageNotification = new MessageNotification(smsNotification);
-        sendNotofication(messageNotification);
+//        EmailNotification notification = new EmailNotification();
+//        SMSNotification smsNotification = new SMSNotification(notification);
+//        MessageNotification messageNotification = new MessageNotification(smsNotification);
+//        sendNotofication(messageNotification);
+        /**
+         * proxy
+         */
+        prepare(new Proxy(new DailyReport()), LocalDate.now());
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
@@ -124,7 +132,10 @@ public class Main {
 //
 //        };
 //    }
-    private static void sendNotofication(Notification notification){
-        notification.send();
+//    private static void sendNotofication(Notification notification){
+//        notification.send();
+//    }
+    private static void prepare(Report report, LocalDate localDate){
+        System.out.println(report.prepareReport(localDate));
     }
 }
