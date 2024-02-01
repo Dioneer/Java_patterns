@@ -63,19 +63,19 @@ public class Main {
         /**
          * observer
          */
-        Publisher job = new JobAgency();
-        Company company1 = new Company(job,"Goggle", 1200000 );
-        Company company2 = new Company(job,"Yandex", 500000 );
-        Worker worker1 = new Worker("Igor");
-        Worker worker2 = new Worker("Ira");
-        Student student = new Student("Petr");
-        job.registerObserver(worker1);
-        job.registerObserver(worker2);
-        job.registerObserver(student);
-        for (int i = 0; i < 4; i++) {
-            company1.needEmployee();
-            company2.needEmployee();
-        }
+//        Publisher job = new JobAgency();
+//        Company company1 = new Company(job,"Goggle", 1200000 );
+//        Company company2 = new Company(job,"Yandex", 500000 );
+//        Worker worker1 = new Worker("Igor");
+//        Worker worker2 = new Worker("Ira");
+//        Student student = new Student("Petr");
+//        job.registerObserver(worker1);
+//        job.registerObserver(worker2);
+//        job.registerObserver(student);
+//        for (int i = 0; i < 4; i++) {
+//            company1.needEmployee();
+//            company2.needEmployee();
+//        }
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
