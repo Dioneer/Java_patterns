@@ -11,6 +11,7 @@ import Pegas.factory.EmpolyeeType;
 import Pegas.factory.Freelancer;
 //import Pegas.factory.Worker;
 import Pegas.observer.*;
+import Pegas.prototype.Flower;
 import Pegas.singleTone.SingleTone;
 import Pegas.singleTone.TestSingleTone;
 
@@ -76,6 +77,12 @@ public class Main {
 //            company1.needEmployee();
 //            company2.needEmployee();
 //        }
+        /**
+         * prototype
+         */
+        Flower flower = new Flower("Red", "Rose");
+        Flower flower1 = flower.clone();
+        System.out.println(flower1);
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
