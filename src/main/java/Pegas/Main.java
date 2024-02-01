@@ -8,6 +8,10 @@ import Pegas.builder2.Order;
 import Pegas.builder2.OrderBuilder;
 import Pegas.composite.BoxContainer;
 import Pegas.composite.Purchase;
+import Pegas.decorator.EmailNotification;
+import Pegas.decorator.MessageNotification;
+import Pegas.decorator.Notification;
+import Pegas.decorator.SMSNotification;
 import Pegas.factory.Employee;
 import Pegas.factory.EmpolyeeType;
 import Pegas.factory.Freelancer;
@@ -96,9 +100,16 @@ public class Main {
         /**
          * composite
          */
-        BoxContainer boxContainer = new BoxContainer(Arrays.asList(new Purchase(25),new Purchase(44),
-        new Purchase(56),new Purchase(50)));
-        System.out.println(boxContainer.countPrice());
+//        BoxContainer boxContainer = new BoxContainer(Arrays.asList(new Purchase(25),new Purchase(44),
+//        new Purchase(56),new Purchase(50)));
+//        System.out.println(boxContainer.countPrice());
+        /**
+         * decorator
+         */
+        EmailNotification notification = new EmailNotification();
+        SMSNotification smsNotification = new SMSNotification(notification);
+        MessageNotification messageNotification = new MessageNotification(smsNotification);
+        sendNotofication(messageNotification);
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
@@ -113,4 +124,7 @@ public class Main {
 //
 //        };
 //    }
+    private static void sendNotofication(Notification notification){
+        notification.send();
+    }
 }
