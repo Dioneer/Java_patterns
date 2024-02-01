@@ -25,6 +25,9 @@ import Pegas.proxy.Proxy;
 import Pegas.proxy.Report;
 import Pegas.singleTone.SingleTone;
 import Pegas.singleTone.TestSingleTone;
+import Pegas.strategy.ArraySorter;
+import Pegas.strategy.BubbleSort;
+import Pegas.strategy.DirectlySort;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -117,7 +120,15 @@ public class Main {
         /**
          * proxy
          */
-        prepare(new Proxy(new DailyReport()), LocalDate.now());
+//        prepare(new Proxy(new DailyReport()), LocalDate.now());
+        /**
+         * strategy
+         */
+        int[]arr = {1,2,5,4,7,45,2};
+        ArraySorter sorter = new ArraySorter(new BubbleSort());
+        sorter.sort(arr);
+        sorter.setStrategy(new DirectlySort());
+        sorter.sort(arr);
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
@@ -135,7 +146,7 @@ public class Main {
 //    private static void sendNotofication(Notification notification){
 //        notification.send();
 //    }
-    private static void prepare(Report report, LocalDate localDate){
-        System.out.println(report.prepareReport(localDate));
-    }
+//    private static void prepare(Report report, LocalDate localDate){
+//        System.out.println(report.prepareReport(localDate));
+//    }
 }
