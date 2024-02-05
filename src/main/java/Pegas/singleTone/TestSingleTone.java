@@ -11,12 +11,22 @@ public class TestSingleTone {
     }
     public static TestSingleTone getInstance(String sign){
         if(instance==null){
-            synchronized (TestSingleTone.class){
-                if(instance==null){
-                    instance = new TestSingleTone(sign);
+            synchronized (TestSingleTone.class) {
+                if (instance == null) {
+                    return instance = new TestSingleTone(sign);
                 }
             }
         }
         return instance;
     }
+//    public static TestSingleTone getInstance(String sign){
+//        if(instance==null){
+//            synchronized (TestSingleTone.class){
+//                if(instance==null){
+//                    instance = new TestSingleTone(sign);
+//                }
+//            }
+//        }
+//        return instance;
+//    }
 }

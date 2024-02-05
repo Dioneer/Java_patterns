@@ -38,12 +38,12 @@ public class Main {
         /**
          * singleTone
          */
-//        Class<SingleTone> singleToneClass = SingleTone.class;
-//        System.out.println("TTT"+singleToneClass+"TTT");
-//        TestSingleTone tst = TestSingleTone.getInstance("1111");
-//        tst.sign();
-//        TestSingleTone tst2 = TestSingleTone.getInstance("2222");
-//        tst2.sign();
+        Class<SingleTone> singleToneClass = SingleTone.class;
+        System.out.println("TTT"+singleToneClass+"TTT");
+        TestSingleTone tst = TestSingleTone.getInstance("1111");
+        tst.sign();
+        TestSingleTone tst2 = TestSingleTone.getInstance("2222");
+        tst2.sign();
         /**
          * Builder
          */
@@ -124,11 +124,11 @@ public class Main {
         /**
          * strategy
          */
-        int[]arr = {1,2,5,4,7,45,2};
-        ArraySorter sorter = new ArraySorter(new BubbleSort());
-        sorter.sort(arr);
-        sorter.setStrategy(new DirectlySort());
-        sorter.sort(arr);
+//        int[]arr = {1,2,5,4,7,45,2};
+//        ArraySorter sorter = new ArraySorter(new BubbleSort());
+//        sorter.sort(arr);
+//        sorter.setStrategy(new DirectlySort());
+//        sorter.sort(arr);
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
