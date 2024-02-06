@@ -11,18 +11,22 @@ public class MS201 implements MeteoSenser2{
     public int getId() {
         return id;
     }
+
     @Override
     public double getTemperature() {
-        return 45;
+        return 500;
     }
+
     @Override
     public double getHumidity() {
-        return 58;
+        return 35;
     }
+
     @Override
     public double getPressure() {
-        return 745;
+        return 45;
     }
+
     @Override
     public LocalDateTime getDateTime() {
         return LocalDateTime.now();

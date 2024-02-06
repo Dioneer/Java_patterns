@@ -2,6 +2,7 @@ package Pegas.adapter.test;
 
 public class ST501 implements SmallSenser {
     private int id;
+
     public ST501(int id) {
         this.id = id;
     }
@@ -13,6 +14,6 @@ public class ST501 implements SmallSenser {
 
     @Override
     public double getTemperature() {
-        return 55;
+        return 65;
     }
 }

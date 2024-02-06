@@ -20,6 +20,7 @@ import Pegas.factoryMethod.Gift;
 import Pegas.factoryMethod.Present;
 import Pegas.observer.*;
 import Pegas.prototype.Flower;
+import Pegas.prototype.TestFlower;
 import Pegas.proxy.DailyReport;
 import Pegas.proxy.Proxy;
 import Pegas.proxy.Report;
@@ -38,12 +39,12 @@ public class Main {
         /**
          * singleTone
          */
-        Class<SingleTone> singleToneClass = SingleTone.class;
-        System.out.println("TTT"+singleToneClass+"TTT");
-        TestSingleTone tst = TestSingleTone.getInstance("1111");
-        tst.sign();
-        TestSingleTone tst2 = TestSingleTone.getInstance("2222");
-        tst2.sign();
+//        Class<SingleTone> singleToneClass = SingleTone.class;
+//        System.out.println("TTT"+singleToneClass+"TTT");
+//        TestSingleTone tst = TestSingleTone.getInstance("1111");
+//        tst.sign();
+//        TestSingleTone tst2 = TestSingleTone.getInstance("2222");
+//        tst2.sign();
         /**
          * Builder
          */
@@ -96,9 +97,12 @@ public class Main {
         /**
          * prototype
          */
-//        Flower flower = new Flower("Red", "Rose");
-//        Flower flower1 = flower.clone();
-//        System.out.println(flower1);
+        Flower flower = new Flower("Red", "Rose");
+        Flower flower1 = flower.clone();
+        System.out.println(flower1);
+        TestFlower testFlower = new TestFlower("blue", "Lilia");
+        TestFlower testFlower1 = testFlower.clone();
+        System.out.println(testFlower1);
         /**
          * factoryMethod
          */
