@@ -5,4 +5,9 @@ public class KidsPresent extends Present{
     public String getName() {
         return "Toy";
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

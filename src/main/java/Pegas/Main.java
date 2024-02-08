@@ -35,7 +35,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         /**
          * singleTone
          */
@@ -97,17 +97,17 @@ public class Main {
         /**
          * prototype
          */
-        Flower flower = new Flower("Red", "Rose");
-        Flower flower1 = flower.clone();
-        System.out.println(flower1);
-        TestFlower testFlower = new TestFlower("blue", "Lilia");
-        TestFlower testFlower1 = testFlower.clone();
-        System.out.println(testFlower1);
+//        Flower flower = new Flower("Red", "Rose");
+//        Flower flower1 = flower.clone();
+//        System.out.println(flower1);
+//        TestFlower testFlower = new TestFlower("blue", "Lilia");
+//        TestFlower testFlower1 = testFlower.clone();
+//        System.out.println(testFlower1);
         /**
          * factoryMethod
          */
-//        Present gift = new Gift().createGist(25);
-//        System.out.println(gift);
+        Present gift = new Gift().createGist(25);
+        System.out.println(gift);
         /**
          * composite
          */

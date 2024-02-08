@@ -8,7 +8,6 @@ public class AdapterST501 implements MeteoSenser2{
     public AdapterST501(SmallSenser smallSenser) {
         this.smallSenser = smallSenser;
     }
-
     @Override
     public int getId() {
         return smallSenser.getId();

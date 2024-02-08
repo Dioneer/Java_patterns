@@ -5,4 +5,9 @@ public class ParentsPresent extends Present{
     public String getName() {
         return "Car";
     }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
 }
