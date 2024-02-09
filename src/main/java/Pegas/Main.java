@@ -1,6 +1,8 @@
 package Pegas;
 
 import Pegas.adapter.*;
+import Pegas.bridge.RedColor;
+import Pegas.bridge.Triangle;
 import Pegas.builder.Builder;
 import Pegas.builder.Director;
 import Pegas.builder.ProgrammerBuilder;
@@ -106,8 +108,8 @@ public class Main {
         /**
          * factoryMethod
          */
-        Present gift = new Gift().createGist(25);
-        System.out.println(gift);
+//        Present gift = new Gift().createGist(25);
+//        System.out.println(gift);
         /**
          * composite
          */
@@ -133,6 +135,11 @@ public class Main {
 //        sorter.sort(arr);
 //        sorter.setStrategy(new DirectlySort());
 //        sorter.sort(arr);
+        /**
+         * Bridge
+         */
+        Triangle triangle = new Triangle(new RedColor());
+        triangle.draw();
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
