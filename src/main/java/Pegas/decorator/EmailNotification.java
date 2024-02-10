@@ -4,8 +4,7 @@ public class EmailNotification implements Notification {
     public EmailNotification(Notification notification) {
         this.notification = notification;
     }
-    public EmailNotification() {
-    }
+    public EmailNotification() {}
     private Notification notification;
     public void send(){
         if(notification!= null){notification.send();}

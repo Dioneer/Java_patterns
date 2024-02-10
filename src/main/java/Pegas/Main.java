@@ -114,15 +114,15 @@ public class Main {
          * composite
          */
 //        BoxContainer boxContainer = new BoxContainer(Arrays.asList(new Purchase(25),new Purchase(44),
-//        new Purchase(56),new Purchase(50)));
+//                new Purchase(56),new Purchase(50)));
 //        System.out.println(boxContainer.countPrice());
         /**
          * decorator
          */
-//        EmailNotification notification = new EmailNotification();
-//        SMSNotification smsNotification = new SMSNotification(notification);
-//        MessageNotification messageNotification = new MessageNotification(smsNotification);
-//        sendNotofication(messageNotification);
+        EmailNotification emailnotification = new EmailNotification();
+        SMSNotification smsNotification = new SMSNotification(emailnotification);
+        MessageNotification messageNotification = new MessageNotification(smsNotification);
+        sendNotification(messageNotification);
         /**
          * proxy
          */
@@ -138,8 +138,8 @@ public class Main {
         /**
          * Bridge
          */
-        Triangle triangle = new Triangle(new RedColor());
-        triangle.draw();
+//        Triangle triangle = new Triangle(new RedColor());
+//        triangle.draw();
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
@@ -154,9 +154,9 @@ public class Main {
 //
 //        };
 //    }
-//    private static void sendNotofication(Notification notification){
-//        notification.send();
-//    }
+    private static void sendNotification(Notification notification){
+        notification.send();
+    }
 //    private static void prepare(Report report, LocalDate localDate){
 //        System.out.println(report.prepareReport(localDate));
 //    }
