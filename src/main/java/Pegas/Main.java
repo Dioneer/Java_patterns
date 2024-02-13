@@ -8,6 +8,10 @@ import Pegas.builder.Director;
 import Pegas.builder.ProgrammerBuilder;
 import Pegas.builder2.Order;
 import Pegas.builder2.OrderBuilder;
+import Pegas.chane.MaxLimit;
+import Pegas.chane.MinLimit;
+import Pegas.chane.MoneyTransaction;
+import Pegas.chane.ValidateTransaction;
 import Pegas.composite.BoxContainer;
 import Pegas.composite.Purchase;
 import Pegas.decorator.EmailNotification;
@@ -119,10 +123,10 @@ public class Main {
         /**
          * decorator
          */
-        EmailNotification emailnotification = new EmailNotification();
-        SMSNotification smsNotification = new SMSNotification(emailnotification);
-        MessageNotification messageNotification = new MessageNotification(smsNotification);
-        sendNotification(messageNotification);
+//        EmailNotification emailnotification = new EmailNotification();
+//        SMSNotification smsNotification = new SMSNotification(emailnotification);
+//        MessageNotification messageNotification = new MessageNotification(smsNotification);
+//        sendNotification(messageNotification);
         /**
          * proxy
          */
@@ -140,6 +144,13 @@ public class Main {
          */
 //        Triangle triangle = new Triangle(new RedColor());
 //        triangle.draw();
+        /**
+         * chane
+         */
+        ValidateTransaction firstdvalid = new MinLimit();
+        ValidateTransaction secondvalid = new MaxLimit();
+        firstdvalid.setNext(secondvalid);
+        firstdvalid.check(new MoneyTransaction(2000));
     }
 //    static Employee generateEmployee(EmpolyeeType empolyeeType, Random random){
 //        String[]names = new String[]{"Kesha","Gosha","Dima","Domna"};
@@ -154,9 +165,9 @@ public class Main {
 //
 //        };
 //    }
-    private static void sendNotification(Notification notification){
-        notification.send();
-    }
+//    private static void sendNotification(Notification notification){
+//        notification.send();
+//    }
 //    private static void prepare(Report report, LocalDate localDate){
 //        System.out.println(report.prepareReport(localDate));
 //    }
